@@ -1,27 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Dark Theme Redesigned */
+  --foreground-rgb: 230, 230, 230;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 3, 3, 3;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  --primary-glow: #1a1a1a;
+  --secondary-glow: #1f1f1f;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --tile-start-rgb: 2, 5, 10;
+  --tile-end-rgb: 2, 5, 20;
+  --tile-border: #1a1a1a;
+
+  --callout-rgb: 20, 20, 20;
+  --callout-border-rgb: 108, 108, 108;
+
+  --card-rgb: 22, 22, 22;
+  --card-border-rgb: 40, 40, 40;
+
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --accent-color: #00cec9;
+  --text-color: #dfe6e9;
+  --danger-color: #ff7675;
 }
 
 * {
@@ -30,13 +39,46 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY2bm5s8PDxubm5tbW1ra2uAb3A0NDRra2uNjY2IiIiPj4+JiYna2tbe3t7i4uLDw8NxcXG6urqVlZW6urpiYmJ4eHh/f3/s7Oze3t7JycnGxsY8Oz9/r2QeAAAAbXRSTlMA2b/h1Qj+9N8e8d5+PA2wgn5fUT0tLSklJS4uJCYlJSUlJSUuLi4uLi4uLi4uLi4uLi4uJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJS7M3a4AAAChSURBVDjLzdNFFsQgDATQ26gJgQxQ21v/w94lTjbTzQzL/wE//AJuIe4u7u7u7u7u7u7u7h7uLe7uHgB04P4B27dC4J/4E7f7wBc+hA39s4B8aEHiwCwzYMk4wAVhD3YlcMAa4wB2aFgcYFj2A/5eDpPEAYYwB2RnAMk4wB8SAXeXwAATYMy4AFs4wK0SgI02ATD2DBAZGgETv0ASFAAAQABJRU5ErkJggg==');
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  :root {
+    --foreground-rgb: 230, 230, 230;
+    --background-start-rgb: 18, 18, 18;
+    --background-end-rgb: 3, 3, 3;
+
+    --primary-glow: #1a1a1a;
+    --secondary-glow: #1f1f1f;
+
+    --tile-start-rgb: 2, 5, 10;
+    --tile-end-rgb: 2, 5, 20;
+    --tile-border: #1a1a1a;
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    
+    --card-rgb: 22, 22, 22;
+    --card-border-rgb: 40, 40, 40;
   }
 }
