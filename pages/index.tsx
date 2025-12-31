@@ -18,6 +18,7 @@ interface Option {
 const Home = () => {
   const [length, setLength] = useState('');
   const [width, setWidth] = useState('');
+  const [quantity, setQuantity] = useState('1');
   const [materialPrice, setMaterialPrice] = useState('');
   const [price, setPrice] = useState(0);
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -33,6 +34,7 @@ const Home = () => {
   const calculatePrice = () => {
     const l = parseFloat(length);
     const w = parseFloat(width);
+    const qty = parseInt(quantity);
     let m = 0;
 
     if (selectedMaterial.value === 'custom') {
@@ -44,8 +46,8 @@ const Home = () => {
         }
     }
 
-    if (l > 0 && w > 0 && m > 0) {
-      const newPrice = ((l * w) / 144) * m;
+    if (l > 0 && w > 0 && qty > 0 && m > 0) {
+      const newPrice = (((l * w) * qty) / 144) * m;
       setPrice(newPrice);
     } else {
       setPrice(0);
@@ -97,6 +99,16 @@ const Home = () => {
               type="number"
               value={width}
               onChange={(e) => setWidth(e.target.value)}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="quantity">Quantity</label>
+            <input
+              id="quantity"
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
               className={styles.input}
             />
           </div>
